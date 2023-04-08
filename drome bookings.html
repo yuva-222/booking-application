@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Droame Bookings</title>
+	<link rel="stylesheet" type="text/css" href="droame booking.css">
+    <script>const addBookingBtn = document.querySelector('#bookings button');
+
+        addBookingBtn.addEventListener('click', () => {
+          // code to open the booking form
+        });
+        const editBtns = document.querySelectorAll('button[type="edit"]');
+        
+        editBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // code to open the editing form for this booking or customer
+          });
+        });
+        const deleteBtns = document.querySelectorAll('button[type="delete"]');
+        
+        deleteBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // code to delete this booking or customer from the table
+          });
+        });
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('main section');
+        
+        navLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const sectionId = link.getAttribute('href');
+            const sectionToShow = document.querySelector(sectionId);
+            sections.forEach(section => section.style.display = 'none');
+            sectionToShow.style.display = 'block';
+          });
+        });
+        
+    </script>
+
+</head>
+<body>
+	<header>
+		<h1>Droame Bookings</h1>
+		<nav>
+			<ul>
+				<li><a href="#bookings">Bookings</a></li>
+				<li><a href="#customers">Customers</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="bookings">
+			<h2>Bookings</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Booking ID</th>
+						<th>Customer ID</th>
+						<th>Date</th>
+						<th>Time</th>
+						<th>Duration</th>
+						<th>Location</th>
+						<th>Price</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>123</td>
+						<td>2023-04-10</td>
+						<td>10:00</td>
+						<td>1 hour</td>
+						<td>Delhi</td>
+						<td>$150</td>
+						<td>
+							<button>Edit</button>
+							<button>Delete</button>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>456</td>
+						<td>2023-04-12</td>
+						<td>14:00</td>
+						<td>2 hours</td>
+						<td>mumbai</td>
+						<td>$300</td>
+						<td>
+							<button>Edit</button>
+							<button>Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button>Add Booking</button>
+		</section>
+		<section id="customers">
+			<h2>Customers</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Customer ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Phone Number</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>123</td>
+						<td>ab</td>
+						<td>cd</td>
+						<td>abcd@example.com</td>
+						<td>(123) 456-7890</td>
+						<td>
+							<button>Edit</button>
+							<button>Delete</button>
+						</td>
+					</tr>
+					<tr>
+						<td>456</td>
+						<td>dc</td>
+						<td>ba</td>
+						<td>dcba@example.com</td>
+						<td>(555) 555-5555</td>
+						<td>
+							<button>Edit</button>
+							<button>Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button>Add Customer</button>
+		</section>
+	</main>
+</body>
+</html>
